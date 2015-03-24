@@ -1,14 +1,12 @@
 package com.vick.sia.webtutorial;
 
-import org.springframework.context.annotation.Configuration;
-
 public class HelloWorld
 {
     private String message;
 
     public String getMessage()
     {
-        return message;
+        return "HelloWorld.class" + message;
     }
 
     public void setMessage(String message)
