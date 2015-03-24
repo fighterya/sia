@@ -1,13 +1,22 @@
 package com.vick.sia;
 
-/**
- * Hello world!
- *
- */
-public class App 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+
+import com.vick.sia.webtutorial.HelloWorldConfig;
+import com.vick.sia.webtutorial.HelloWorld;
+
+public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(HelloWorldConfig.class);
+
+        HelloWorld helloWorld = ctx.getBean(HelloWorld.class);
+
+        helloWorld.setMessage("This is a hello world message");
+
+        System.out.println(helloWorld.getMessage());
     }
 }
